@@ -4,34 +4,29 @@
 (*
  * Return: Always zero
  */
+
 int main(void)
 {
-	int i = '0';
-	int j = '0';
+	int d, p;
 
-	while (i <= '9')
+	for (d = '0'; d < '9'; d++)
 	{
-		while (j <= '9')
+		for (p = d + 1; p <= '9'; p++)
 		{
-			putchar(i);
-			putchar(j);
-			if (j == '9' && i == '9')
+			if (p != d)
 			{
-				putchar('\n');
-			}
-			else
-			{
+				putchar(d);
+				putchar(p);
+
+				if (d == '8' && p == '9')
+					continue;
+
 				putchar(',');
 				putchar(' ');
 			}
-			j++;
 		}
-		if (j >= '9')
-		{
-			j = '0';
-		}
-		i++;
 	}
+	putchar('\n');
+
 	return (0);
 }
-
